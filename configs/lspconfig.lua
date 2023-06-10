@@ -33,7 +33,7 @@ typescript.setup {
     on_attach = on_attach,
   },
 
-  filetypes = { "html", "typescriptreact", "javascriptreact" },
+  filetypes = { "typescriptreact", "javascriptreact" },
 }
 
 lspconfig.tailwindcss.setup {

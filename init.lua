@@ -6,6 +6,23 @@
 --   command = "tabdo wincmd =",
 -- })
 
+-------------------------------
+-- vs-code snippets
+-------------------------------
+
+-- snippets para Angular
+-- vim.g.vscode_snippets_path = "~/.config/nvim/lua/custom/snippets/angular"
+
+-- snippets para React (No necesario ya que vienen estos plugins por defecto)
+-- vim.g.vscode_snippets_path = "~/.config/nvim/lua/custom/snippets/react"
+
+-- snippets para Python
+-- vim.g.vscode_snippets_path = "~/.config/nvim/lua/custom/snippets/python"
+
+-------------------------------
+-- vs-code snippets
+-------------------------------
+
 -- shortcut
 local opt = vim.opt
 
@@ -26,6 +43,14 @@ opt.breakindent = true -- Conserva la indentación de las líneas que sólo son 
 
 -- wrapping
 opt.wrap = false -- pone debajo las líneas que sobrepasan la pantalla
+
+-- folding
+vim.o.foldcolumn = "1" -- '0' is not bad
+vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
+vim.o.foldlevelstart = 99
+vim.o.foldenable = true
+opt.foldmethod = "expr"
+opt.foldexpr = "nvim_treesitter#foldexpr()"
 
 -- search settings
 opt.ignorecase = true -- ignorar las letrás mayúsculas cuando realizamos una búsqueda
