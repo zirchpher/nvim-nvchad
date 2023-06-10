@@ -22,6 +22,8 @@ local plugins = {
     end, -- Override to setup mason-lspconfig
   },
 
+  { "jose-elias-alvarez/typescript.nvim" }, -- suporte extendido para ts
+
   -- override plugin configs
   {
     "williamboman/mason.nvim",

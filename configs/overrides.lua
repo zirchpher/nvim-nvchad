@@ -22,7 +22,7 @@ M.treesitter = {
   },
   indent = {
     enable = true,
-    disable = {"python"}
+    disable = { "python" },
   },
   auto_install = true,
 }
@@ -31,7 +31,6 @@ M.mason = {
   ensure_installed = {
     -- lua stuff
     "lua-language-server",
-    "stylua",
 
     -- web dev stuff
     "html-lsp",
@@ -41,6 +40,7 @@ M.mason = {
     "tailwindcss-language-server",
 
     -- formatters
+    "stylua", -- lua
     "deno", -- ts tsx jsx js
     "prettier", -- html css ts tsx js jsx ...
     "eslint_d", -- tsx ts jsx js

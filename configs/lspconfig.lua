@@ -3,23 +3,9 @@ local capabilities = require("plugins.configs.lspconfig").capabilities
 
 local lspconfig = require "lspconfig"
 
--- if you just want default config for the servers then put them in a table
-local servers = { "tailwindcss", "emmet_ls" }
-
-for _, lsp in ipairs(servers) do
-  lspconfig[lsp].setup {
-    on_attach = on_attach,
-    capabilities = capabilities,
-    filetypes = {
-      "typescript",
-      "typescriptreact",
-      "typescript.tsx",
-      "javascript",
-      "javascriptreact",
-      "javascript.jsx",
-      "html",
-    },
-  }
+local status, typescript = pcall(require, "typescript")
+if not status then
+  return
 end
 
 lspconfig.html.setup {
@@ -28,15 +14,10 @@ lspconfig.html.setup {
   filetypes = { "html" },
 }
 
-lspconfig.tsserver.setup {
-  on_attach = on_attach,
+lspconfig.emmet_ls.setup {
   capabilities = capabilities,
-  filetypes = { "typescript", "typescriptreact", "typescript.tsx", "javascript", "javascriptreact", "javascript.jsx" },
-  cmd = { "typescript-language-server", "--stdio" },
-  -- make tsserver work with javascript
-  root_dir = function()
-    return vim.loop.cwd()
-  end,
+  on_attach = on_attach,
+  filetypes = { "html", "typescriptreact", "javascriptreact" },
 }
 
 lspconfig.cssls.setup {
@@ -45,18 +26,29 @@ lspconfig.cssls.setup {
   filetypes = { "css", "scss", "less" },
 }
 
--- lspconfig.tailwindcss.setup {
---   on_attach = on_attach,
---   capabilities = capabilities,
---   filetypes = {
---     "typescript",
---     "typescriptreact",
---     "typescript.tsx",
---     "javascript",
---     "javascriptreact",
---     "javascript.jsx",
---     "html",
---   },
--- }
+-- tsserver con algunos keywords de react
+typescript.setup {
+  server = {
+    capabilities = capabilities,
+    on_attach = on_attach,
+  },
+
+  filetypes = { "html", "typescriptreact", "javascriptreact" },
+}
+
+lspconfig.tailwindcss.setup {
+  capabilities = capabilities,
+  on_attach = on_attach,
+}
+
+-- if you just want default config for the servers then put them in a table
+-- local servers = { "tailwindcss", "emmet_ls", "html", "cssls", "tsserver" }
+
+-- for _, lsp in ipairs(servers) do
+--   lspconfig[lsp].setup {
+--     on_attach = on_attach,
+--     capabilities = capabilities,
+--   }
+-- end
 
 -- lspconfig.pyright.setup { blabla}
