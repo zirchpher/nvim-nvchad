@@ -40,6 +40,9 @@ M.general = {
     -- Mason
     ["<leader>m"] = { "<cmd>:Mason<cr>", "open Mason" },
 
+    -- Lazygit
+    ["<leader>lg"] = { "<cmd>:LazyGit<cr>", "open Lazygit" },
+
     -- transparency
     ["<leader>tt"] = {
       function()
