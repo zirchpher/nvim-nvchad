@@ -36,8 +36,10 @@ M.mason = {
     "html-lsp",
     "emmet-ls",
     "css-lsp",
+    "cssmodules-language-server",
     "typescript-language-server",
     "tailwindcss-language-server",
+    "json-lsp",
 
     -- formatters
     "stylua", -- lua

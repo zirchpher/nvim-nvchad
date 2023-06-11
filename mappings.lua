@@ -37,6 +37,9 @@ M.general = {
     -- Lazy
     ["<leader>l"] = { "<cmd>:Lazy<cr>", "open Lazy" },
 
+    -- Mason
+    ["<leader>m"] = { "<cmd>:Mason<cr>", "open Mason" },
+
     -- transparency
     ["<leader>tt"] = {
       function()

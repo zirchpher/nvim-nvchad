@@ -82,6 +82,17 @@ local plugins = {
     end,
   },
 
+  {
+    "numToStr/Comment.nvim",
+    dependencies = {
+      "JoosepAlviste/nvim-ts-context-commentstring",
+    },
+    event = "VeryLazy",
+    config = function()
+      require "custom.configs.comments"
+    end,
+  },
+
   -- import cost
   {
     "barrett-ruth/import-cost.nvim",
