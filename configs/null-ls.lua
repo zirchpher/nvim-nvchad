@@ -11,7 +11,7 @@ local sources = {
 
   -- webdev stuff
   formatting.deno_fmt, -- choosed deno for ts/js files cuz its very fast!
-  formatting.prettier.with { filetypes = { "html", "markdown", "css" } }, -- so prettier works only on these filetypes
+  formatting.prettier.with { filetypes = { "html", "css" } }, -- so prettier works only on these filetypes
 
   lint.eslint_d.with { -- js/ts linter
     -- only enable eslint if root has .eslintrc.js (not in youtube nvim video)

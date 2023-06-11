@@ -1,4 +1,26 @@
-# Example_config
+# Requerimientos
 
-This can be used as an example custom config for NvChad, this branch is a minimal one. Do check the feature_full branch if you need all the ease in your config.
-# nvim-nvchad
+- cmake = necesario para telescope y import-cost
+- ripgrep = necesario para telescope
+- lazygit = necesario para lazygit
+
+instalación usando Arch Linux:
+
+```BASH
+sudo pacman -S cmake ripgrep lazygit
+```
+
+# Uso de LazyGit
+
+#### Stage
+
+- agregar a stage un archivo: `<space>`
+
+#### Commit
+
+- hacer un envía un commit: `<c>`
+- envía el commit: `alt + enter`
+
+#### Push
+
+- hacer un push: `<p>`

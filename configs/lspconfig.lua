@@ -96,7 +96,6 @@ lspconfig.tailwindcss.setup {
     "jade",
     "leaf",
     "liquid",
-    "markdown",
     "mdx",
     "mustache",
     "njk",
