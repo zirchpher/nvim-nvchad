@@ -158,7 +158,16 @@ lspconfig.jsonls.setup {
 }
 
 lspconfig.eslint.setup {
+<<<<<<< HEAD
   on_attach = on_attach,
+=======
+  on_attach = function(client, bufnr)
+    vim.api.nvim_create_autocmd("BufWritePre", {
+      buffer = bufnr,
+      command = "EslintFixAll",
+    })
+  end,
+>>>>>>> 0325b500a2b546ad9a3528dfb573843c1137d35c
   capabilities = capabilities,
   cmd = { "vscode-eslint-language-server", "--stdio" },
   filetypes = {

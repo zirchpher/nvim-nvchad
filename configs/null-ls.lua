@@ -23,7 +23,11 @@ local sources = {
   -- lint
   --------------------------
   -- webdev stuff
+<<<<<<< HEAD
   -- lint.eslint_d, -- ofrece solo diagnóstico de los errores sin CodeAction
+=======
+  lint.eslint_d,
+>>>>>>> 0325b500a2b546ad9a3528dfb573843c1137d35c
 }
 
 -- formatear al guardar un archivo
