@@ -45,7 +45,9 @@ M.mason = {
     "stylua", -- lua
     "deno", -- ts tsx jsx js
     "prettier", -- html css ts tsx js jsx ...
-    "eslint_d", -- tsx ts jsx js
+
+    -- linters
+    "eslint-lsp", -- tsx ts jsx js
   },
   automatic_installation = true,
 }
