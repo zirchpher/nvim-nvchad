@@ -9,19 +9,21 @@ local lint = null_ls.builtins.diagnostics
 
 local sources = {
 
+  --------------------------
+  -- formatting
+  --------------------------
   -- webdev stuff
   formatting.deno_fmt, -- choosed deno for ts/js files cuz its very fast!
   formatting.prettier.with { filetypes = { "html", "css" } }, -- so prettier works only on these filetypes
 
-  lint.eslint_d.with { -- js/ts linter
-    -- only enable eslint if root has .eslintrc.js (not in youtube nvim video)
-    condition = function(utils)
-      return utils.root_has_file ".eslintrc.js" -- change file extension if you use something else
-    end,
-  },
-
   -- Lua
   formatting.stylua,
+
+  --------------------------
+  -- lint
+  --------------------------
+  -- webdev stuff
+  lint.eslint_d,
 }
 
 -- formatear al guardar un archivo
