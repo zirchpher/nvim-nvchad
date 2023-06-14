@@ -8,6 +8,10 @@ if not status then
   return
 end
 
+-----------------------------
+-- WEBDEV STUFF
+-----------------------------
+
 lspconfig.html.setup {
   on_attach = on_attach,
   capabilities = capabilities,
@@ -151,6 +155,56 @@ lspconfig.jsonls.setup {
   cmd = { "vscode-json-language-server", "--stdio" },
   filetypes = { "json", "jsonc" },
   init_options = { provideFormatter = true },
+}
+
+lspconfig.eslint.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  cmd = { "vscode-eslint-language-server", "--stdio" },
+  filetypes = {
+    "javascript",
+    "javascriptreact",
+    "javascript.jsx",
+    "typescript",
+    "typescriptreact",
+    "typescript.tsx",
+    "vue",
+    "svelte",
+    "astro",
+  },
+  settings = {
+    codeAction = {
+      disableRuleComment = {
+        enable = true,
+        location = "separateLine",
+      },
+      showDocumentation = {
+        enable = true,
+      },
+    },
+    codeActionOnSave = {
+      enable = false,
+      mode = "all",
+    },
+    experimental = {
+      useFlatConfig = false,
+    },
+    format = true,
+    nodePath = "",
+    onIgnoredFiles = "off",
+    packageManager = "npm",
+    problems = {
+      shortenToSingleLine = false,
+    },
+    quiet = false,
+    rulesCustomizations = {},
+    run = "onType",
+    useESLintClass = false,
+    validate = "on",
+    workingDirectory = {
+      mode = "location",
+    },
+  },
 }
 
 -- if you just want default config for the servers then put them in a table
