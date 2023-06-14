@@ -64,11 +64,10 @@ local plugins = {
   -- tailwind support
   {
     "NvChad/nvim-colorizer.lua",
-    opts = {
-      user_default_options = {
-        tailwind = true,
-      },
-    },
+    event = "VeryLazy",
+    config = function()
+      require "custom.configs.colorizer"
+    end,
   },
 
   {
