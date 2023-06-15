@@ -25,7 +25,14 @@ local plugins = {
   { "jose-elias-alvarez/typescript.nvim" }, -- suporte extendido para ts
 
   -- surrounding
-  { "tpope/vim-surround", event = "VeryLazy" },
+  {
+    "kylechui/nvim-surround",
+    version = "*", -- Use for stability; omit to use `main` branch for the latest features
+    event = "VeryLazy",
+    config = function()
+      require("nvim-surround").setup {}
+    end,
+  },
 
   -- override plugin configs
   {
