@@ -24,7 +24,7 @@ local plugins = {
 
   { "jose-elias-alvarez/typescript.nvim" }, -- suporte extendido para ts
 
-  -- surrounding
+  -- essential
   {
     "kylechui/nvim-surround",
     version = "*", -- Use for stability; omit to use `main` branch for the latest features
@@ -32,6 +32,21 @@ local plugins = {
     config = function()
       require("nvim-surround").setup {}
     end,
+  },
+
+  {
+    "axelvc/template-string.nvim",
+    event = "VeryLazy",
+    opts = {
+      filetypes = { "typescript", "javascript", "typescriptreact", "javascriptreact", "python" }, -- filetypes where the plugin is active
+      jsx_brackets = true, -- must add brackets to jsx attributes
+      remove_template_string = false, -- remove backticks when there are no template string
+      restore_quotes = {
+        -- quotes used when "remove_template_string" option is enabled
+        normal = [[']],
+        jsx = [["]],
+      },
+    },
   },
 
   -- override plugin configs
