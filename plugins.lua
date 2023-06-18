@@ -27,8 +27,8 @@ local plugins = {
   -- essential
   {
     "kylechui/nvim-surround",
-    version = "*", -- Use for stability; omit to use `main` branch for the latest features
     event = "VeryLazy",
+    version = "*", -- Use for stability; omit to use `main` branch for the latest features
     config = function()
       require("nvim-surround").setup {}
     end,
@@ -86,7 +86,6 @@ local plugins = {
   -- tailwind support
   {
     "NvChad/nvim-colorizer.lua",
-    event = "VeryLazy",
     config = function()
       require "custom.configs.colorizer"
     end,
@@ -111,7 +110,6 @@ local plugins = {
     dependencies = {
       "JoosepAlviste/nvim-ts-context-commentstring",
     },
-    event = "VeryLazy",
     config = function()
       require "custom.configs.comments"
     end,
@@ -120,12 +118,27 @@ local plugins = {
   -- import cost
   {
     "barrett-ruth/import-cost.nvim",
-    build = "sh install.sh npm",
     event = "VeryLazy",
+    build = "sh install.sh npm",
     config = true,
   },
 
   -- autocompletado con IA
+  {
+    "dreamsofcode-io/ChatGPT.nvim",
+    event = "VeryLazy",
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope.nvim",
+    },
+    config = function()
+      require("chatgpt").setup {
+        -- async_api_key_cmd = "echo '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'", -- con este comando le mando directamente a chatgpt el token
+      }
+    end,
+  },
+
   {
     "Exafunction/codeium.vim",
     event = "VeryLazy",
@@ -140,29 +153,17 @@ local plugins = {
       vim.keymap.set("i", "<c-x>", function()
         return vim.fn["codeium#Clear"]()
       end, { expr = true })
-
-      -- not working
-      -- Previous suggestion
-      -- vim.keymap.set("i", "<C-<>", function()
-      --   return vim.fn["codeium#CycleCompletions"](-1)
-      -- end, { expr = true })
-
-      -- not working
-      -- Next suggestion
-      -- vim.keymap.set("i", "<C->>", function()
-      --   return vim.fn["codeium#CycleCompletions"](1)
-      -- end, { expr = true })
     end,
   },
 
   -- usemos un manejador de git y github
   {
     "kdheepak/lazygit.nvim",
+    event = "VeryLazy",
     -- optional for floating window border decoration
     dependencies = {
       "nvim-lua/plenary.nvim",
     },
-    event = "VeryLazy",
   },
 
   -- To make a plugin not be loaded
