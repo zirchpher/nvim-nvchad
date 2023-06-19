@@ -134,7 +134,7 @@ local plugins = {
     },
     config = function()
       require("chatgpt").setup {
-        -- async_api_key_cmd = "echo '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'", -- con este comando le mando directamente a chatgpt el token
+        async_api_key_cmd = "pass show api/tokens/openai",
       }
     end,
   },
