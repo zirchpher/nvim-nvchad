@@ -65,7 +65,6 @@ local plugins = {
     opts = overrides.nvimtree,
   },
 
-  -- Install a plugin
   {
     "max397574/better-escape.nvim",
     event = "InsertEnter",
@@ -105,6 +104,7 @@ local plugins = {
     end,
   },
 
+  -- comments react styles
   {
     "numToStr/Comment.nvim",
     dependencies = {
@@ -163,6 +163,27 @@ local plugins = {
     -- optional for floating window border decoration
     dependencies = {
       "nvim-lua/plenary.nvim",
+    },
+  },
+
+  -- markdown preview
+  {
+    "iamcco/markdown-preview.nvim",
+    build = "cd app && npm install",
+    init = function()
+      vim.g.mkdp_filetypes = { "markdown" }
+    end,
+    ft = { "markdown" },
+  },
+
+  -- wrapping
+  {
+    {
+      "andrewferrier/wrapping.nvim",
+      event = "VeryLazy",
+      config = function()
+        require("wrapping").setup()
+      end,
     },
   },
 

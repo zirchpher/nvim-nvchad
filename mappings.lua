@@ -34,14 +34,21 @@ M.general = {
     -- Plugins Keymaps
     -----------------------------
 
-    -- Lazy
-    ["<leader>l"] = { "<cmd>:Lazy<cr>", "open Lazy" },
+    -- Main plugins
+    ["<leader><leader>l"] = { "<cmd>:Lazy<cr>", "open Lazy" },
+    ["<leader><leader>m"] = { "<cmd>:Mason<cr>", "open Mason" },
 
-    -- Mason
-    ["<leader>m"] = { "<cmd>:Mason<cr>", "open Mason" },
-
-    -- Lazygit
+    -- Common plugins
     ["<leader>lg"] = { "<cmd>:LazyGit<cr>", "open Lazygit" },
+    ["<leader>md"] = { "<cmd>:MarkdownPreviewToggle<cr>", "open MarkdownPreview" },
+    ["<A-z>"] = { "<cmd>:ToggleWrapMode<cr>", "Toggle Wrap" },
+
+    ["<leader>pp"] = { "<cmd>:ChatGPT<cr>", "Promp ChatGPT" },
+    ["<leader>pa"] = { "<cmd>:ChatGPTActAs<cr>", "ChatGPT Act as" },
+    ["<leader>pc"] = { "<cmd>:ChatGPTCompleteCode<cr>", "ChatGPT Complete Code" },
+    ["<leader>pe"] = { "<cmd>:ChatGPTEditWithInstructions<cr>", "ChatGPT Edit with Instructions" },
+    ["<leader>pr"] = { ":ChatGPTRun ", "ChatGPT run" },
+    ["<C-q>"] = { "<cmd>:q<cr>", "quit" },
 
     -- transparency
     ["<leader>tt"] = {
@@ -61,6 +68,9 @@ M.general = {
   },
 
   i = {
+    -- Quit
+    ["<C-q>"] = { "<cmd>:q<cr>", "quit" },
+
     -- Move Lines
     ["<A-j>"] = { "<esc><cmd>m .+1<cr>==gi", "Move down" },
     ["<A-k>"] = { "<esc><cmd>m .-2<cr>==gi", "Move up" },
