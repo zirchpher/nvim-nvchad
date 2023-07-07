@@ -8,6 +8,7 @@ M.treesitter = {
     -- web stuff
     "html",
     "css",
+    "scss",
     "javascript",
     "typescript",
     "tsx",
