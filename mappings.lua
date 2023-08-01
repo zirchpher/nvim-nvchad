@@ -5,6 +5,7 @@ M.general = {
   n = {
     ["<C-a>"] = { "gg<S-v>G", "copy all lines" },
     ["x"] = { '"_x', "delete single character without copying into register" },
+    ["dd"] = { '"_dd', "delete entire line without copying into register" },
 
     -- Resize window using <ctrl> arrow keys
     ["<C-Up>"] = { "<cmd>resize +2<cr>", "Increase window height" },
@@ -18,7 +19,7 @@ M.general = {
 
     -- Search and exchange of words
     ["gw"] = { "*N", "Search word under cursor" },
-    -- ["_"] = { "*Ncgn", "change similar words using . (punto)", opts = { nowait = true } },
+    -- ["_"] = { "*Ncgn", "change similar words using _ (guión bajo)", opts = { nowait = true } },
     ["<C-d>"] = { "*Ncgn", "change similar words using . (punto)", opts = { nowait = true } },
     [";"] = { ":%s/", "enter change word mode", opts = { nowait = true } },
 
@@ -80,6 +81,9 @@ M.general = {
   },
 
   v = {
+    -- deleting without copying into register
+    -- ["d"] = { '"_d', "delete selected lines without copying into register" },
+
     -- Move Lines
     ["<A-j>"] = { ":m '>+1<cr>gv=gv", "Move down" },
     ["<A-k>"] = { ":m '<-2<cr>gv=gv", "Move up" },

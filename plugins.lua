@@ -176,7 +176,7 @@ local plugins = {
     ft = { "markdown" },
   },
 
-  -- wrapping
+  -- Wrapping
   {
     {
       "andrewferrier/wrapping.nvim",

@@ -3,11 +3,12 @@
 - cmake = necesario para telescope y import-cost
 - ripgrep = necesario para telescope
 - lazygit = necesario para lazygit
+- xclip, xsel = share clipboard in neovim
 
 instalación usando Arch Linux:
 
 ```BASH
-sudo pacman -S cmake ripgrep lazygit
+sudo pacman -S cmake ripgrep lazygit xclip xsel
 ```
 
 # Uso de LazyGit
